@@ -6,12 +6,6 @@
   html {
     scroll-behavior: initial; /* Lenis handles smooth scrolling */
   }
-
-  @media (min-width: 768px) {
-    html, body, a, button, select, input, textarea, [role="button"], .clickable {
-      cursor: none !important;
-    }
-  }
   
   body {
     @apply bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 overflow-x-hidden;

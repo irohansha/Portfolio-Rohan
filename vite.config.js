@@ -10,6 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  assetsInclude: ['**/*.md'],
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {

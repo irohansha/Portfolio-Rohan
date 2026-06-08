@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 
-import Cursor from './components/Cursor';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import SocialDock from './components/SocialDock';
@@ -47,7 +46,6 @@ function App() {
   return (
     <>
       <div className="relative">
-          <Cursor />
           <ScrollProgress />
           <Navbar />
           <SocialDock />

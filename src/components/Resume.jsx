@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaDownload, FaFilePdf } from 'react-icons/fa';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { fadeIn } from '../animations/variants';
+import resumeFile from '../assets/Rohan_Resume.pdf';
 
 const Resume = () => {
   const { ref, inView } = useScrollReveal();
@@ -33,7 +34,8 @@ const Resume = () => {
             </p>
             
             <a 
-              href="/Rohan_Resume.md" 
+              href={resumeFile} 
+              download="Rohan_Resume.pdf"
               target="_blank" 
               rel="noreferrer"
               className="btn-primary group flex items-center gap-3 text-lg px-8 py-4"

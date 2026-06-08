@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BiMenu, BiX } from 'react-icons/bi';
 import ThemeToggle from './ThemeToggle';
 import { profile } from '../data/profile';
+import resumePdf from '../assets/Rohan_Resume.pdf';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -75,7 +76,7 @@ const Navbar = () => {
           </ul>
           <div className="flex items-center gap-4 border-l border-slate-300 dark:border-slate-700 pl-4">
             <ThemeToggle />
-            <a href="#resume" className="btn-primary text-sm py-2 px-4">Resume</a>
+            <a href={resumePdf} download="Rohan_Resume.pdf" className="btn-primary text-sm py-2 px-4">Resume</a>
           </div>
         </nav>
 
@@ -112,7 +113,8 @@ const Navbar = () => {
               ))}
             </ul>
             <a 
-              href="#resume" 
+              href={resumePdf} 
+              download="Rohan_Resume.pdf"
               onClick={() => setIsOpen(false)}
               className="btn-primary mt-4"
             >
