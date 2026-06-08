@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: initial; /* Lenis handles smooth scrolling */
+  }
+
+  @media (min-width: 768px) {
+    html, body, a, button, select, input, textarea, [role="button"], .clickable {
+      cursor: none !important;
+    }
+  }
+  
+  body {
+    @apply bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 overflow-x-hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background-light dark:bg-background-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+  .btn-primary {
+    @apply relative overflow-hidden bg-primary text-white font-medium px-6 py-3 rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-primary/50;
+  }
+  .btn-secondary {
+    @apply relative overflow-hidden bg-transparent text-slate-900 dark:text-white font-medium px-6 py-3 rounded-full border border-primary hover:bg-primary/10 transition-all;
+  }
+}
+
+/* Animations that are hard to do with Tailwind classes alone */
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 2rem;
+  animation: scrollX 30s linear infinite;
+}
+
+@keyframes scrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 2rem));
+  }
+}
