@@ -15,7 +15,7 @@ export const projectsData = [
     ],
     tech: ["React.js", "Node.js", "Express.js", "Firebase", "Tailwind CSS"],
     github: profile.github,
-    live: profile.github,
+    live: "https://www.vidyavaidya.org",
     color: "from-emerald-500 to-teal-400",
   },
   {
