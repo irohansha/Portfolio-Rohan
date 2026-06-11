@@ -22,7 +22,7 @@ const Certifications = () => {
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           {certificationsData.map((cert, index) => (
             <motion.div

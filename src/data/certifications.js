@@ -1,4 +1,4 @@
-import { FaTrophy, FaCode, FaProjectDiagram } from 'react-icons/fa';
+import { FaTrophy, FaCertificate } from 'react-icons/fa';
 
 export const certificationsData = [
   {
@@ -12,20 +12,11 @@ export const certificationsData = [
   },
   {
     id: 2,
-    title: "Authentication, RBAC & REST APIs",
-    issuer: "Secure systems, role-based access, and backend integrations",
-    icon: FaCode,
+    title: "6-Month Full Stack Developer Internship Certificate",
+    issuer: "Charani Infotech Pvt Ltd",
+    icon: FaCertificate,
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
     borderColor: "border-blue-500/20",
-  },
-  {
-    id: 3,
-    title: "Real Project Domains",
-    issuer: "EdTech, HRM, NGO, Online Examination, and Quick Commerce",
-    icon: FaProjectDiagram,
-    color: "text-emerald-500",
-    bgColor: "bg-emerald-500/10",
-    borderColor: "border-emerald-500/20",
   },
 ];
