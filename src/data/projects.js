@@ -90,7 +90,7 @@ export const projectsData = [
     id: 6,
     title: "Website Clones Collection",
     type: "Frontend Development Collection",
-    description: "Responsive website clones inspired by Spotify, iStock, Ray Romano Contracting, Mobirise, and Ola Cabs.",
+    description: "Responsive website clones inspired by Spotify, iStock, Mobirise, and Ola Cabs.",
     features: [
       "Responsive layouts using HTML, CSS, and JavaScript",
       "Modern UI sections and reusable components",
