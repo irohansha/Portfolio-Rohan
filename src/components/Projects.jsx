@@ -6,6 +6,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { staggerContainer, fadeIn } from '../animations/variants';
 
 const ProjectCard = ({ project, index }) => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseXSpring = useSpring(x);
@@ -62,14 +63,20 @@ const ProjectCard = ({ project, index }) => {
           <div className="mb-8">
             <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-200 mb-3">Key Features</h5>
             <ul className="space-y-2">
-              {project.features.slice(0, 3).map((feature, fIdx) => (
+              {(isExpanded ? project.features : project.features.slice(0, 3)).map((feature, fIdx) => (
                 <li key={fIdx} className="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2">
                   <span className="text-accent mt-0.5">•</span> {feature}
                 </li>
               ))}
               {project.features.length > 3 && (
-                <li className="text-sm text-slate-500 italic flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span> +{project.features.length - 3} more...
+                <li className="text-sm flex items-start gap-2">
+                  <span className="text-accent mt-0.5">•</span>
+                  <button 
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="text-primary hover:text-primary/80 font-medium italic transition-colors focus:outline-none"
+                  >
+                    {isExpanded ? "Show less" : `+${project.features.length - 3} more...`}
+                  </button>
                 </li>
               )}
             </ul>
