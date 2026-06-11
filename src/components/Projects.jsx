@@ -92,9 +92,15 @@ const ProjectCard = ({ project, index }) => {
             </div>
 
             <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-white/10">
-              <a href={project.live} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors">
-                <FaExternalLinkAlt size={14} /> Live Demo
-              </a>
+              {project.live ? (
+                <a href={project.live} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors">
+                  <FaExternalLinkAlt size={14} /> Live Demo
+                </a>
+              ) : (
+                <button disabled className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-white/5 text-slate-400 dark:text-slate-600 font-medium cursor-not-allowed border border-slate-200 dark:border-white/10">
+                  <FaExternalLinkAlt size={14} /> Live Demo
+                </button>
+              )}
               <a href={project.github} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg glass-card hover:bg-white/10 transition-colors text-slate-900 dark:text-white font-medium">
                 <FaGithub size={16} /> GitHub
               </a>

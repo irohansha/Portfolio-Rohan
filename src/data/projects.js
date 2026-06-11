@@ -32,7 +32,7 @@ export const projectsData = [
     ],
     tech: ["React.js", "Node.js", "Express.js", "Firebase", "Socket.io"],
     github: profile.github,
-    live: profile.github,
+    live: "",
     color: "from-blue-500 to-cyan-400",
   },
   {
@@ -49,7 +49,7 @@ export const projectsData = [
     ],
     tech: ["React.js", "Node.js", "Firebase", "JavaScript"],
     github: profile.github,
-    live: profile.github,
+    live: "",
     color: "from-indigo-500 to-purple-400",
   },
   {
@@ -66,7 +66,7 @@ export const projectsData = [
     ],
     tech: ["Next.js", "Node.js", "Firebase", "Spring Boot", "MySQL"],
     github: profile.github,
-    live: profile.github,
+    live: "",
     color: "from-orange-500 to-amber-400",
   },
   {
@@ -83,7 +83,7 @@ export const projectsData = [
     ],
     tech: ["React.js", "Java Microservices", "MySQL"],
     github: profile.github,
-    live: profile.github,
+    live: "",
     color: "from-pink-500 to-rose-400",
   },
   {
@@ -100,7 +100,7 @@ export const projectsData = [
     ],
     tech: ["HTML5", "CSS3", "JavaScript"],
     github: profile.github,
-    live: profile.github,
+    live: "",
     color: "from-sky-500 to-blue-400",
   },
 ];
