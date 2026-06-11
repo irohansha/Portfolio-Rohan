@@ -86,7 +86,7 @@ const Contact = () => {
                 <label htmlFor="name" className="text-sm font-medium text-slate-700 dark:text-slate-300">Name</label>
                 <input 
                   type="text" 
-                  name="name" 
+                  name="user_name" 
                   id="name"
                   required
                   placeholder="John Doe"
@@ -98,7 +98,7 @@ const Contact = () => {
                 <label htmlFor="email" className="text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
                 <input 
                   type="email" 
-                  name="email" 
+                  name="user_email" 
                   id="email"
                   required
                   placeholder="john@example.com"
@@ -110,7 +110,7 @@ const Contact = () => {
                 <label htmlFor="subject" className="text-sm font-medium text-slate-700 dark:text-slate-300">Subject</label>
                 <input 
                   type="text" 
-                  name="title" 
+                  name="subject" 
                   id="subject"
                   required
                   placeholder="Job Opportunity"
