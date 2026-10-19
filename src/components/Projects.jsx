@@ -112,13 +112,20 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
+const categories = ["All", "Full Stack", "Java & Backend", "Frontend"];
+
 const Projects = () => {
   const { ref, inView } = useScrollReveal();
+  const [activeCategory, setActiveCategory] = React.useState("All");
+
+  const filteredProjects = activeCategory === "All" 
+    ? projectsData 
+    : projectsData.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-24 relative bg-slate-50 dark:bg-transparent border-y border-slate-200 dark:border-white/5">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">Portfolio</h2>
           <h3 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-4">
             Featured Projects
@@ -128,14 +135,53 @@ const Projects = () => {
           </p>
         </div>
 
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-14">
+          {categories.map((cat) => {
+            const count = cat === "All" 
+              ? projectsData.length 
+              : projectsData.filter((p) => p.category === cat).length;
+            const isActive = activeCategory === cat;
+
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 border ${
+                  isActive 
+                    ? "text-white border-primary shadow-[0_0_20px_rgba(14,165,233,0.35)]" 
+                    : "text-slate-600 dark:text-slate-400 border-slate-200 dark:border-white/10 hover:border-primary/40 glass-card"
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeCategoryPill"
+                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full -z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span>{cat}</span>
+                <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${
+                  isActive 
+                    ? "bg-slate-950/40 text-white" 
+                    : "bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-300"
+                }`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
         <motion.div 
           ref={ref}
+          layout
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
           className="grid md:grid-cols-2 gap-8 lg:gap-12"
         >
-          {projectsData.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </motion.div>

@@ -6,8 +6,9 @@ export const experienceData = [
     location: "India",
     duration: "Jan 2026 - Present",
     highlights: [
-      "Developed and maintained full-stack web applications using React.js, Node.js, Java, and Firebase.",
-      "Built responsive user interfaces, integrated REST APIs, and worked on database operations.",
+      "Architect and maintain end-to-end web applications utilizing React.js, Node.js, Express, Java, and Firebase.",
+      "Design secure RESTful APIs with JWT & RBAC authorization, reducing unauthorized access vulnerabilities.",
+      "Optimize frontend performance and API response times, achieving a 30% improvement in load speeds."
     ],
   },
   {
@@ -17,8 +18,9 @@ export const experienceData = [
     location: "India",
     duration: "Jul 2025 - Dec 2025",
     highlights: [
-      "Developed and maintained full-stack web applications using React.js, Node.js, Java, and Firebase.",
-      "Built responsive user interfaces, integrated REST APIs, and worked on database operations.",
+      "Engineered reusable UI components and integrated third-party REST services and payment gateway workflows.",
+      "Assisted in database modeling across MySQL & Firestore, crafting scalable schemas and automated CRUD queries.",
+      "Collaborated in agile sprint cycles, participating in code reviews and ensuring cross-browser mobile responsiveness."
     ],
   },
 ];

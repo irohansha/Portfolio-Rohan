@@ -42,7 +42,6 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      <Toaster position="bottom-right" />
       <div className="container mx-auto px-6 md:px-12">
         <motion.div 
           ref={ref}

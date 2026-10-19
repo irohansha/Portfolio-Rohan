@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
+import { Toaster } from 'react-hot-toast';
 
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
@@ -45,6 +46,18 @@ function App() {
 
   return (
     <>
+      <Toaster 
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: '#0a0a0f',
+            color: '#fff',
+            border: '1px solid rgba(14, 165, 233, 0.3)',
+            borderRadius: '16px',
+            backdropFilter: 'blur(10px)',
+          },
+        }}
+      />
       <div className="relative">
           <ScrollProgress />
           <Navbar />

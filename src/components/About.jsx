@@ -46,18 +46,55 @@ const About = () => {
           className="grid lg:grid-cols-2 gap-16 items-center"
         >
           {/* Left: Image/Visual */}
-          <motion.div variants={fadeIn('right', 'tween', 0.2, 0.8)} className="relative h-[500px] w-full max-w-md mx-auto lg:mx-0 ">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-3xl transform -rotate-6 opacity-50 blur-lg"></div>
+          <motion.div variants={fadeIn('right', 'tween', 0.2, 0.8)} className="relative h-[500px] w-full max-w-md mx-auto lg:mx-0">
+            {/* Intensive Background Aura Glow */}
+            <div className="absolute -inset-3 bg-gradient-to-tr from-primary via-accent to-secondary rounded-3xl transform -rotate-6 opacity-60 blur-xl animate-pulse"></div>
+            
             <div className="absolute inset-0 bg-background-dark/5 border border-white/10 rounded-3xl transform rotate-3 glass-card overflow-hidden">
               <img 
                 src="/rohan.jpg" 
                 alt={profile.name} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
+
+            {/* Intensive Highlighted RS Logo Emblem Badge */}
+            <motion.div 
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -top-5 -left-5 z-20 group cursor-pointer"
+            >
+              <div className="relative">
+                {/* Intensive Radial Neon Halo */}
+                <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 via-primary to-accent rounded-2xl blur-md opacity-85 group-hover:opacity-100 group-hover:blur-lg transition-all duration-300 animate-pulse"></div>
+                
+                {/* Shield Body */}
+                <div className="relative px-3.5 py-2.5 bg-slate-950/90 backdrop-blur-xl border border-cyan-400/50 rounded-2xl shadow-[0_0_30px_rgba(14,165,233,0.55)] flex items-center gap-3">
+                  {/* Glowing RS Monogram Box */}
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 via-primary to-accent p-[2px] flex items-center justify-center shadow-lg shadow-primary/40 group-hover:scale-105 transition-transform">
+                    <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                      <span className="font-heading font-black text-base tracking-widest bg-gradient-to-r from-cyan-300 via-white to-accent text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,245,212,0.8)]">
+                        RS
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Badge Text Details */}
+                  <div className="flex flex-col pr-1">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                      <span className="text-xs font-black tracking-wider text-white uppercase drop-shadow">Rohan Sha</span>
+                    </div>
+                    <span className="text-[10px] font-bold text-cyan-300 tracking-widest uppercase">
+                      Software Engineer
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
             
             {/* Experience Badge */}
-            <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl flex flex-col items-center justify-center border-t-4 border-t-primary">
+            <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl flex flex-col items-center justify-center border-t-4 border-t-primary shadow-[0_10px_30px_rgba(14,165,233,0.3)]">
               <span className="text-3xl font-black text-gradient mb-1">1+ Year</span>
               <span className="text-sm font-medium text-slate-900 dark:text-white uppercase tracking-wider">Exp.</span>
             </div>
@@ -66,7 +103,14 @@ const About = () => {
           {/* Right: Content */}
           <motion.div variants={fadeIn('left', 'tween', 0.4, 0.8)} className="flex flex-col gap-8">
             <div>
-              <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">About Me</h2>
+              <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-md shadow-[0_0_20px_rgba(14,165,233,0.25)] mb-3">
+                <span className="px-2 py-0.5 rounded-md bg-gradient-to-r from-primary to-accent text-slate-950 font-black text-xs tracking-wider shadow-sm">
+                  RS
+                </span>
+                <span className="text-xs font-bold text-primary tracking-widest uppercase">
+                  About Me
+                </span>
+              </div>
               <h3 className="text-4xl md:text-5xl font-heading font-bold mb-6">
                 Passionate about code & <span className="text-gradient">creative solutions.</span>
               </h3>

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDownload, FaRegCopy, FaCheck } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 import { Canvas } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import { textVariant, fadeIn, staggerContainer } from '../animations/variants';
@@ -40,6 +41,15 @@ const TypewriterText = () => {
 };
 
 const Hero = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(profile.email);
+    setCopied(true);
+    toast.success('Email copied to clipboard!');
+    setTimeout(() => setCopied(false), 2500);
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       <ParticleBackground />
@@ -87,7 +97,7 @@ const Hero = () => {
 
             <motion.div 
               variants={fadeIn('up', 'tween', 0.5, 0.5)}
-              className="flex flex-wrap items-center gap-4 pt-4"
+              className="flex flex-wrap items-center gap-3 pt-4"
             >
               <a href="#resume" className="btn-primary group flex items-center gap-2">
                 Download Resume
@@ -96,12 +106,29 @@ const Hero = () => {
               <a href="#contact" className="btn-secondary">
                 Hire Me
               </a>
-              <div className="flex items-center gap-3 ml-4">
-                <a href={profile.github} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:text-primary transition-colors hover:scale-110">
-                  <FaGithub size={20} />
+              <button
+                onClick={handleCopyEmail}
+                className="px-4 py-3 rounded-full glass-card hover:border-primary/50 text-slate-700 dark:text-slate-300 hover:text-primary transition-all flex items-center gap-2 text-sm font-medium border border-slate-200 dark:border-white/10"
+                title="Copy email to clipboard"
+              >
+                {copied ? (
+                  <>
+                    <FaCheck className="text-emerald-400" />
+                    <span className="text-emerald-400 font-semibold">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <FaRegCopy className="text-primary" />
+                    <span>Copy Email</span>
+                  </>
+                )}
+              </button>
+              <div className="flex items-center gap-2 ml-1">
+                <a href={profile.github} target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full glass-card flex items-center justify-center hover:text-primary transition-colors hover:scale-110" title="GitHub Profile">
+                  <FaGithub size={18} />
                 </a>
-                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:text-primary transition-colors hover:scale-110">
-                  <FaLinkedin size={20} />
+                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full glass-card flex items-center justify-center hover:text-primary transition-colors hover:scale-110" title="LinkedIn Profile">
+                  <FaLinkedin size={18} />
                 </a>
               </div>
             </motion.div>
@@ -118,7 +145,7 @@ const Hero = () => {
                 <img 
                   src="/rohan.jpg" 
                   alt={profile.name} 
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover object-top rounded-full"
                 />
               </div>
             </div>

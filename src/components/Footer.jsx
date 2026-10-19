@@ -20,9 +20,18 @@ const Footer = () => {
           
           {/* Column 1: Info & Tagline */}
           <div className="flex flex-col gap-4">
-            <a href="#home" className="text-2xl font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2 group w-fit">
-              <span className="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text font-extrabold">{profile.initials}</span>
-              <span className="text-xl font-semibold hover:text-primary transition-colors">Rohan.dev</span>
+            <a href="#home" className="flex items-center gap-3 group w-fit">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-primary to-accent rounded-xl blur-sm opacity-70 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative w-9 h-9 rounded-xl bg-slate-950/90 dark:bg-black/90 border border-cyan-400/40 flex items-center justify-center shadow-md">
+                  <span className="font-heading font-black text-sm tracking-wider bg-gradient-to-r from-cyan-300 via-white to-accent text-transparent bg-clip-text">
+                    {profile.initials}
+                  </span>
+                </div>
+              </div>
+              <span className="text-xl font-heading font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                Rohan<span className="text-primary font-black">.dev</span>
+              </span>
             </a>
             <p className="text-slate-600 dark:text-slate-400 text-sm max-w-sm leading-relaxed">
               Motivated Software Engineer building highly performant web applications with modern design, responsive interfaces, and robust architectures.

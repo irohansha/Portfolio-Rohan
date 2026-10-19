@@ -5,6 +5,7 @@ export const projectsData = [
     id: 1,
     title: "VidyaVaidya Foundation",
     type: "Full Stack NGO Platform",
+    category: "Full Stack",
     description: "A full-stack NGO platform for donations, volunteer management, authentication, admin dashboard, and community engagement.",
     features: [
       "Donation and volunteer management workflows",
@@ -22,6 +23,7 @@ export const projectsData = [
     id: 2,
     title: "InfyCode",
     type: "Full Stack EdTech Platform",
+    category: "Full Stack",
     description: "An EdTech platform for students, trainers, and admins with course management, mock tests, live coding sessions, and counseling schedules.",
     features: [
       "Role-based access control for students, trainers, and administrators",
@@ -39,6 +41,7 @@ export const projectsData = [
     id: 3,
     title: "HRM Portal",
     type: "Full Stack HR Management System",
+    category: "Full Stack",
     description: "A modern HRM portal for employee onboarding, attendance, leave management, payroll processing, and payslip generation.",
     features: [
       "Employee onboarding workflow",
@@ -56,6 +59,7 @@ export const projectsData = [
     id: 4,
     title: "Online Examination System",
     type: "Full Stack Examination Platform",
+    category: "Java & Backend",
     description: "A secure online exam system with student registration, real-time evaluation, automated scoring, and result management.",
     features: [
       "Secure student registration",
@@ -73,6 +77,7 @@ export const projectsData = [
     id: 5,
     title: "Quick Commerce Grocery Delivery Platform",
     type: "Scalable Commerce Platform",
+    category: "Java & Backend",
     description: "A quick commerce grocery delivery platform with admin, user, delivery partner, and marketing modules.",
     features: [
       "Admin, user, delivery partner, and marketing modules",
@@ -90,6 +95,7 @@ export const projectsData = [
     id: 6,
     title: "Website Clones Collection",
     type: "Frontend Development Collection",
+    category: "Frontend",
     description: "Responsive website clones inspired by Spotify, iStock, Mobirise, and Ola Cabs.",
     features: [
       "Responsive layouts using HTML, CSS, and JavaScript",

@@ -55,9 +55,18 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 xl:pl-28 xl:pr-12 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2 group">
-          <span className="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">{profile.initials}</span>
-          <span className="text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">Rohan.dev</span>
+        <a href="#home" className="flex items-center gap-3 group relative">
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-primary to-accent rounded-xl blur-sm opacity-75 group-hover:opacity-100 group-hover:blur-md transition duration-300 animate-pulse"></div>
+            <div className="relative w-10 h-10 rounded-xl bg-slate-950/90 dark:bg-black/90 border border-cyan-400/40 flex items-center justify-center shadow-[0_0_15px_rgba(14,165,233,0.4)] group-hover:scale-105 transition-transform">
+              <span className="font-heading font-black text-base tracking-widest bg-gradient-to-r from-cyan-300 via-white to-accent text-transparent bg-clip-text drop-shadow-[0_0_8px_rgba(0,245,212,0.7)]">
+                {profile.initials}
+              </span>
+            </div>
+          </div>
+          <span className="text-lg font-heading font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block text-slate-900 dark:text-white">
+            Rohan<span className="text-primary font-black">.dev</span>
+          </span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
